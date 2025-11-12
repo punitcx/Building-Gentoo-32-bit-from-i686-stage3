@@ -1,3 +1,10 @@
+# Base system tools
+sudo apt update
+sudo apt install -y wget curl git rsync gnupg ca-certificates vim nano less sudo
+
+# Essential unpacking and chroot utilities
+sudo apt install -y tar xz-utils bzip2 zstd lz4 coreutils findutils grep gawk sed e2fsprogs dosfstools squashfs-tools
+
 # Get stage3 tarball
 wget https://distfiles.gentoo.org/releases/x86/autobuilds/20251013T170343Z/stage3-i686-systemd-20251013T170343Z.tar.xz
 sudo tar xpvf stage3-*.tar.xz --xattrs-include='*.*' --numeric-owner -C build
@@ -68,6 +75,8 @@ EOF
 
 
 
+# emerge-webrsync
+emerge-webrsync
 
 # Sync the portage tree
 emerge --sync
